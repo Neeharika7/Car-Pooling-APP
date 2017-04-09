@@ -11,14 +11,11 @@ import com.bvrit.happyride.dao.CarDetailsDAO;
 
 public class CarDetailsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		try {
 			doProcess(request,response);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -29,9 +26,8 @@ public class CarDetailsController extends HttpServlet {
 			doProcess(request,response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+	        	e.printStackTrace();
 		}
-
 	}
 	protected  void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 		boolean result;
@@ -51,8 +47,7 @@ public class CarDetailsController extends HttpServlet {
 					
 					response.sendRedirect("cardetails.jsp");  
 				}
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+		} catch (ClassNotFoundException e)
 			e.printStackTrace();
 		}
 	}
